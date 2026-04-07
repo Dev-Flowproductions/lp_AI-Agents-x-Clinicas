@@ -1,0 +1,87 @@
+{
+  "Metadata": {
+    "title": "AI Agents for Clinics: automate patient intake and scheduling",
+    "description": "Automate your clinic's front desk in the Algarve. Use AI agents to respond, qualify leads, and book appointments 24/7. Get a free diagnostic.",
+    "ogLocale": "en_GB"
+  },
+  "Nav": {
+    "brand": "Flow Productions",
+    "skipToContent": "Skip to content",
+    "ctaDiagnostic": "Free diagnostic",
+    "languageNav": "Choose language"
+  },
+  "Hero": {
+    "eyebrow": "AI Agents · Clinics",
+    "ctaPrimary": "Start free diagnostic",
+    "ctaSecondary": "About Flow Productions",
+    "bannerAlt": "Healthcare professional at a clinic reception with digital interfaces — streamlining patient care with AI",
+    "h1": "The phone never stops. Reception can't answer everything. And patients slip through the cracks.",
+    "lead": "Automate patient intake and qualification with AI agents that respond with context, follow your rules, and hand control to your team when needed.",
+    "p1": "Missed calls. Unanswered emails. WhatsApp messages piling up.",
+    "p2": "While your team tries to respond to everything, they're constantly interrupted — and what should be patient focus turns into firefighting.",
+    "p3": "At Flow Productions, we build AI agents that work like digital colleagues: they respond immediately, qualify requests, and organise information without losing context.",
+    "p4": "All with control, defined rules, and human oversight.",
+    "p5": "AI handles the repetition. Your team focuses on what really matters."
+  },
+  "Body": {
+    "eyebrow": "The day-to-day challenge",
+    "capabilitiesTitle": "What these AI agents do in practice",
+    "title": "AI agents for clinics: when front-desk work stops being the bottleneck",
+    "p1": "The phone rings and someone has to drop what they're doing.",
+    "p2": "An email arrives asking for information, but the reply stays pending.",
+    "p3": "A WhatsApp message comes in, but lack of time means a delayed response.",
+    "p4": "This cycle repeats all day: it fragments your team's attention and creates gaps in service. That's where patients are lost.",
+    "introBullets": "At Flow Productions, we develop and deploy AI agents trained on your clinic's context, able to:",
+    "bullet1": "Answer calls and respond automatically",
+    "bullet2": "Answer FAQs with the right context",
+    "bullet3": "Qualify requests against your criteria",
+    "bullet4": "Route contacts to your team with structured information",
+    "handover": "Whenever needed, the conversation moves to a human with full history, the right context, and no friction.",
+    "crm": "Where applicable, the agent can integrate with your clinic CRM for data updates and appointment workflows, subject to API review and the technical constraints of your existing system.",
+    "result": "The outcome isn't just time saved — it's your clinic's ability to respond to everyone, with quality, every single day."
+  },
+  "ValueStrip": {
+    "eyebrow": "AI with human oversight",
+    "title": "Instant answers, your rules, your team in control",
+    "subtitle": "Presented clearly — so you can see the impact on intake and reception.",
+    "b1": "Fast responses on the channels your clinic already uses",
+    "b2": "Tone, boundaries, and escalation defined by you",
+    "b3": "History and context preserved when a human takes over",
+    "b4": "Ongoing tuning and support from our team"
+  },
+  "HowItWorks": {
+    "eyebrow": "A simple 3-step process",
+    "title": "How does it work?",
+    "s1Title": "Diagnostic",
+    "s1Body": "We analyse your current intake and communication flows.",
+    "s2Title": "Configuration",
+    "s2Body": "We design rules, tone of voice, and control boundaries.",
+    "s3Title": "Implementation",
+    "s3Body": "The agent takes on the tasks, with ongoing monitoring by our team."
+  },
+  "Closing": {
+    "title": "Want to see how this applies to your clinic?",
+    "line1": "No commitment. No unnecessary complexity.",
+    "line2": "Just a clear diagnostic to pinpoint where AI can create real impact.",
+    "button": "Find the right AI agents for my clinic",
+    "websiteLead": "For more on our approach,",
+    "websiteLinkLabel": "visit our website",
+    "statTimeValue": "30s",
+    "statTimeLabel": "seconds",
+    "statQuestionsValue": "6",
+    "statQuestionsLabel": "questions",
+    "cardNote": "Free · No signup",
+    "flowReference": "The diagnostic opens on the Flow Productions site (new tab), in the same spirit as the experience we use on flowproductions.pt."
+  },
+  "Footer": {
+    "rights": "Flow Productions. All rights reserved."
+  },
+  "Languages": {
+    "pt": "Português",
+    "en": "English",
+    "fr": "Français"
+  },
+  "JsonLd": {
+    "orgDescription": "Flow Productions: AI agents for clinics — intake, qualification, and CRM integration with human oversight and clinic-defined rules."
+  }
+}
