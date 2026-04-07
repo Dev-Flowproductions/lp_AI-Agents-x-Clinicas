@@ -3,12 +3,11 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { DiagnosticStartLink } from "@/components/DiagnosticStartLink";
 import { getDiagnosticUrl } from "@/lib/diagnostic-url";
+import { contentMax } from "@/lib/layout-classes";
 
 const FLOW_WEBSITE = "https://flowproductions.pt";
 
-const contentMax = "mx-auto w-full max-w-5xl px-6";
-
-const sectionShell = "border-b border-flow-border px-6 py-16 sm:py-24";
+const sectionShell = "border-b border-flow-border py-16 sm:py-24";
 const sectionAlt = `${sectionShell} bg-white`;
 const sectionMuted = `${sectionShell} bg-flow-bg`;
 
@@ -55,20 +54,20 @@ export async function HeroSection() {
       </div>
 
       <div
-        className={`${contentMax} pb-14 pt-12 sm:pb-20 sm:pt-14 md:pt-10`}
+        className={`${contentMax} pb-12 pt-10 sm:pb-16 sm:pt-12 md:pt-10`}
       >
         <Eyebrow>{t("eyebrow")}</Eyebrow>
         <h1
           id="hero-heading"
-          className="mt-4 text-balance text-4xl font-bold leading-[1.12] tracking-tight text-flow-text sm:text-5xl sm:leading-[1.1] lg:text-[2.85rem] lg:leading-[1.08]"
+          className="mt-3 max-w-none text-balance text-4xl font-bold leading-snug tracking-tight text-flow-text sm:text-5xl sm:leading-snug lg:text-[2.85rem] lg:leading-[1.1]"
         >
           {t("h1")}
         </h1>
-        <p className="mt-8 max-w-3xl text-lg font-medium leading-relaxed text-flow-text sm:text-xl">
+        <p className="mt-6 w-full max-w-none text-lg font-medium leading-relaxed text-flow-text sm:text-xl sm:leading-relaxed">
           {t("lead")}
         </p>
 
-        <div className="mt-10 flex max-w-2xl flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
           <DiagnosticStartLink href={diagnosticUrl}>
             {t("ctaPrimary")}
           </DiagnosticStartLink>
@@ -82,7 +81,7 @@ export async function HeroSection() {
           </a>
         </div>
 
-        <div className="mt-14 w-full max-w-3xl space-y-5 border-t border-flow-border pt-12 text-left text-base leading-relaxed text-flow-text">
+        <div className="mt-12 space-y-6 border-t border-flow-border pt-10 text-left text-base leading-relaxed text-flow-text sm:space-y-7">
           <p>{t("p1")}</p>
           <p>{t("p2")}</p>
           <p>{t("p3")}</p>
@@ -96,8 +95,6 @@ export async function HeroSection() {
 
 export async function BodySection() {
   const t = await getTranslations("Body");
-  const bullets = ["bullet1", "bullet2", "bullet3", "bullet4"] as const;
-  const nums = ["01", "02", "03", "04"] as const;
 
   return (
     <section className={sectionMuted} aria-labelledby="body-heading">
@@ -109,43 +106,20 @@ export async function BodySection() {
         >
           {t("title")}
         </h2>
-        <div className="mt-10 max-w-3xl space-y-5 text-base leading-relaxed text-flow-text sm:text-lg">
+        <div className="mt-10 max-w-none space-y-5 text-base leading-relaxed text-flow-text sm:text-lg">
           <p>{t("p1")}</p>
           <p>{t("p2")}</p>
           <p>{t("p3")}</p>
           <p className="font-medium">{t("p4")}</p>
         </div>
 
-        <p className="mt-12 max-w-3xl text-base font-medium leading-relaxed text-flow-text sm:text-lg">
-          {t("introBullets")}
-        </p>
-
-        <h3 className="mt-10 text-xl font-bold text-flow-text sm:text-2xl">
-          {t("capabilitiesTitle")}
-        </h3>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
-          {bullets.map((key, i) => (
-            <article
-              key={key}
-              className="rounded-2xl border border-flow-border bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
-            >
-              <p className="font-mono text-2xl font-bold tabular-nums text-flow-purple/90">
-                {nums[i]}
-              </p>
-              <p className="mt-3 text-base font-semibold leading-snug text-flow-text">
-                {t(key)}
-              </p>
-            </article>
-          ))}
-        </div>
-
-        <p className="mt-12 max-w-3xl text-base leading-relaxed text-flow-text sm:text-lg">
+        <p className="mt-12 max-w-none text-base leading-relaxed text-flow-text sm:text-lg">
           {t("handover")}
         </p>
-        <p className="mt-6 max-w-3xl text-base leading-relaxed text-flow-muted sm:text-lg">
+        <p className="mt-6 max-w-none text-base leading-relaxed text-flow-muted sm:text-lg">
           {t("crm")}
         </p>
-        <p className="mt-10 max-w-3xl border-l-4 border-flow-yellow bg-white/60 py-4 pl-5 text-base font-semibold leading-relaxed text-flow-text sm:text-lg">
+        <p className="mt-10 max-w-none border-l-4 border-flow-yellow bg-white/60 py-4 pl-5 text-base font-semibold leading-relaxed text-flow-text sm:text-lg">
           {t("result")}
         </p>
       </div>
@@ -159,7 +133,7 @@ export async function ValueStripSection() {
 
   return (
     <section
-      className="border-b border-flow-purple/20 bg-gradient-to-br from-flow-purple via-[#524a8f] to-[#433c73] px-6 py-16 text-white sm:py-24"
+      className="border-b border-flow-purple/20 bg-gradient-to-br from-flow-purple via-[#524a8f] to-[#433c73] py-16 text-white sm:py-24"
       aria-labelledby="value-strip-heading"
     >
       <div className={contentMax}>
@@ -168,11 +142,11 @@ export async function ValueStripSection() {
         </p>
         <h2
           id="value-strip-heading"
-          className="mt-4 max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl"
+          className="mt-4 max-w-none text-3xl font-bold leading-tight tracking-tight sm:text-4xl"
         >
           {t("title")}
         </h2>
-        <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
+        <p className="mt-6 max-w-none text-base leading-relaxed text-white/85 sm:text-lg">
           {t("subtitle")}
         </p>
         <ul className="mt-12 grid gap-6 sm:grid-cols-2">
@@ -195,14 +169,20 @@ export async function ValueStripSection() {
 
 export async function HowItWorksSection() {
   const t = await getTranslations("HowItWorks");
+  const tBody = await getTranslations("Body");
   const steps = [
     { n: "01", title: "s1Title", body: "s1Body" },
     { n: "02", title: "s2Title", body: "s2Body" },
     { n: "03", title: "s3Title", body: "s3Body" },
   ] as const;
+  const capabilityKeys = ["bullet1", "bullet2", "bullet3", "bullet4"] as const;
+  const capabilityNums = ["01", "02", "03", "04"] as const;
 
   return (
-    <section className={sectionAlt} aria-labelledby="how-heading">
+    <section
+      className={sectionAlt}
+      aria-labelledby="how-heading capabilities-heading"
+    >
       <div className={contentMax}>
         <Eyebrow>{t("eyebrow")}</Eyebrow>
         <h2
@@ -211,7 +191,7 @@ export async function HowItWorksSection() {
         >
           {t("title")}
         </h2>
-        <ol className="mt-14 grid gap-6 lg:grid-cols-3">
+        <ol className="mt-10 grid gap-6 sm:mt-12 lg:grid-cols-3">
           {steps.map((step) => (
             <li key={step.n}>
               <article className="h-full rounded-2xl border border-flow-border bg-flow-bg/40 p-8 shadow-sm transition-shadow hover:shadow-md">
@@ -231,6 +211,36 @@ export async function HowItWorksSection() {
             </li>
           ))}
         </ol>
+
+        <div
+          className="mt-14 border-t border-flow-border pt-12 sm:mt-16 sm:pt-16"
+          aria-labelledby="capabilities-heading"
+        >
+          <p className="max-w-none text-base font-medium leading-relaxed text-flow-text sm:text-lg">
+            {tBody("introBullets")}
+          </p>
+          <h3
+            id="capabilities-heading"
+            className="mt-8 text-xl font-bold text-flow-text sm:mt-10 sm:text-2xl"
+          >
+            {tBody("capabilitiesTitle")}
+          </h3>
+          <div className="mt-6 grid gap-5 sm:mt-8 sm:grid-cols-2">
+            {capabilityKeys.map((key, i) => (
+              <article
+                key={key}
+                className="rounded-2xl border border-flow-border bg-flow-bg/50 p-6 shadow-sm transition-shadow hover:shadow-md"
+              >
+                <p className="font-mono text-2xl font-bold tabular-nums text-flow-purple/90">
+                  {capabilityNums[i]}
+                </p>
+                <p className="mt-3 text-base font-semibold leading-snug text-flow-text">
+                  {tBody(key)}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -254,10 +264,10 @@ export async function ClosingDiagnosticSection() {
         >
           {t("title")}
         </h2>
-        <p className="mt-6 max-w-3xl text-base leading-relaxed text-flow-text sm:text-lg">
+        <p className="mt-6 max-w-none text-base leading-relaxed text-flow-text sm:text-lg">
           {t("line1")}
         </p>
-        <p className="mt-3 max-w-3xl text-base leading-relaxed text-flow-muted sm:text-lg">
+        <p className="mt-3 max-w-none text-base leading-relaxed text-flow-muted sm:text-lg">
           {t("line2")}
         </p>
 
@@ -303,7 +313,7 @@ export async function ClosingDiagnosticSection() {
           </a>
           .
         </p>
-        <p className="mt-6 max-w-2xl text-xs leading-relaxed text-flow-muted">
+        <p className="mt-6 max-w-none text-xs leading-relaxed text-flow-muted">
           {t("flowReference")}
         </p>
       </div>
