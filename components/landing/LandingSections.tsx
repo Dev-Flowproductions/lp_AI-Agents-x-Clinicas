@@ -11,6 +11,10 @@ const sectionShell = "border-b border-flow-border py-16 sm:py-24";
 const sectionAlt = `${sectionShell} bg-white`;
 const sectionMuted = `${sectionShell} bg-flow-bg`;
 
+/** Matches hero closing highlight: yellow accent bar + soft purple wash + lift shadow */
+const highlightCardShell =
+  "rounded-2xl border border-flow-border border-l-4 border-l-flow-yellow bg-gradient-to-br from-flow-purple/[0.07] via-white to-flow-bg/60 shadow-[0_12px_40px_-16px_rgba(92,84,160,0.25)]";
+
 function Eyebrow({
   children,
   className = "",
@@ -94,7 +98,7 @@ export async function HeroSection() {
           </div>
           <aside className="mt-8 lg:col-span-5 lg:mt-0">
             <p
-              className={`rounded-2xl border border-flow-border border-l-4 border-l-flow-yellow bg-gradient-to-br from-flow-purple/[0.07] via-white to-flow-bg/60 p-6 text-balance text-3xl font-bold leading-snug tracking-tight text-flow-purple shadow-[0_12px_40px_-16px_rgba(92,84,160,0.25)] sm:p-8 sm:text-[1.875rem] sm:leading-snug lg:text-4xl lg:leading-tight ${copyMeasure}`}
+              className={`${highlightCardShell} p-6 text-balance text-3xl font-bold leading-snug tracking-tight text-flow-purple sm:p-8 sm:text-[1.875rem] sm:leading-snug lg:text-4xl lg:leading-tight ${copyMeasure}`}
             >
               {t("p5")}
             </p>
@@ -218,15 +222,17 @@ export async function HowItWorksSection() {
         <ol className="mt-10 grid gap-6 sm:mt-12 lg:grid-cols-3">
           {steps.map((step) => (
             <li key={step.n}>
-              <article className="h-full rounded-2xl border border-flow-border bg-flow-bg/40 p-8 shadow-sm transition-shadow hover:shadow-md">
+              <article
+                className={`h-full ${highlightCardShell} p-6 transition-shadow hover:shadow-[0_16px_48px_-14px_rgba(92,84,160,0.28)] sm:p-8`}
+              >
                 <span
-                  className="inline-flex min-w-[3rem] items-center justify-center rounded-lg bg-flow-purple px-3 py-1.5 font-mono text-xl font-bold tabular-nums text-white"
+                  className="font-mono text-2xl font-bold tabular-nums text-flow-purple"
                   aria-hidden
                 >
                   {step.n}
                 </span>
                 <h3
-                  className={`mt-6 text-2xl font-bold text-flow-text ${copyMeasure}`}
+                  className={`mt-5 text-2xl font-bold leading-snug tracking-tight text-flow-purple ${copyMeasure}`}
                 >
                   {t(step.title)}
                 </h3>
@@ -285,7 +291,7 @@ export async function ClosingDiagnosticSection() {
   return (
     <section
       id="diagnostico"
-      className="scroll-mt-28 border-t-2 border-t-flow-yellow/95 bg-gradient-to-b from-white via-flow-bg to-[#eceaf5] py-16 sm:py-20 lg:py-24"
+      className="scroll-mt-28 bg-gradient-to-b from-white via-flow-bg to-[#eceaf5] py-16 sm:py-20 lg:py-24"
       aria-labelledby="closing-heading"
     >
       <div className={contentMax}>
