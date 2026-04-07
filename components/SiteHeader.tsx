@@ -36,7 +36,7 @@ export async function SiteHeader() {
           <LanguageSwitcher />
           <a
             href="#diagnostico"
-            className="inline-flex shrink-0 items-center justify-center rounded-lg border-2 border-flow-purple bg-flow-purple px-3 py-2 text-center text-xs font-semibold text-white transition-colors hover:bg-flow-purple-hover sm:px-5 sm:text-sm"
+            className="inline-flex shrink-0 items-center justify-center rounded-lg border-2 border-flow-purple bg-flow-purple px-3 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-flow-purple-hover sm:px-5 sm:text-base"
           >
             {t("ctaDiagnostic")}
           </a>

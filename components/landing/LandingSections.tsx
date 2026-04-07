@@ -3,7 +3,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { DiagnosticStartLink } from "@/components/DiagnosticStartLink";
 import { getDiagnosticUrl } from "@/lib/diagnostic-url";
-import { contentMax } from "@/lib/layout-classes";
+import { contentMax, copyMeasure } from "@/lib/layout-classes";
 
 const FLOW_WEBSITE = "https://flowproductions.pt";
 
@@ -20,7 +20,7 @@ function Eyebrow({
 }) {
   return (
     <p
-      className={`text-xs font-bold uppercase tracking-[0.2em] text-flow-purple ${className}`}
+      className={`text-sm font-bold uppercase tracking-[0.2em] text-flow-purple ${className}`}
     >
       {children}
     </p>
@@ -48,7 +48,7 @@ export async function HeroSection() {
           className="object-cover object-center"
         />
         <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-20 bg-gradient-to-t from-white/55 via-white/12 to-transparent sm:h-24"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[32%] min-h-[8rem] bg-[linear-gradient(to_top,#fff_0%,#fff_3%,rgba(255,255,255,0.92)_14%,rgba(255,255,255,0.55)_30%,rgba(255,255,255,0.18)_52%,rgba(255,255,255,0.04)_74%,transparent_100%)] sm:min-h-[10rem] lg:min-h-[11.5rem]"
           aria-hidden
         />
       </div>
@@ -59,11 +59,13 @@ export async function HeroSection() {
         <Eyebrow>{t("eyebrow")}</Eyebrow>
         <h1
           id="hero-heading"
-          className="mt-3 max-w-none text-balance text-4xl font-bold leading-snug tracking-tight text-flow-text sm:text-5xl sm:leading-snug lg:text-[2.85rem] lg:leading-[1.1]"
+          className={`mt-3 text-balance text-5xl font-bold leading-snug tracking-tight text-flow-text sm:text-6xl sm:leading-snug lg:text-[3.1rem] lg:leading-[1.08] ${copyMeasure}`}
         >
           {t("h1")}
         </h1>
-        <p className="mt-6 w-full max-w-none text-lg font-medium leading-relaxed text-flow-text sm:text-xl sm:leading-relaxed">
+        <p
+          className={`mt-6 text-xl font-medium leading-relaxed text-flow-text sm:text-2xl sm:leading-relaxed ${copyMeasure}`}
+        >
           {t("lead")}
         </p>
 
@@ -75,18 +77,28 @@ export async function HeroSection() {
             href={FLOW_WEBSITE}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-12 items-center justify-center rounded-lg border-2 border-flow-purple bg-transparent px-8 py-3 text-center text-sm font-semibold text-flow-purple transition-colors hover:bg-flow-purple/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-flow-purple"
+            className="inline-flex min-h-[3.25rem] items-center justify-center rounded-lg border-2 border-flow-purple bg-transparent px-8 py-3 text-center text-base font-semibold text-flow-purple transition-colors hover:bg-flow-purple/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-flow-purple"
           >
             {t("ctaSecondary")}
           </a>
         </div>
 
-        <div className="mt-12 space-y-6 border-t border-flow-border pt-10 text-left text-base leading-relaxed text-flow-text sm:space-y-7">
-          <p>{t("p1")}</p>
-          <p>{t("p2")}</p>
-          <p>{t("p3")}</p>
-          <p>{t("p4")}</p>
-          <p className="font-medium text-flow-purple">{t("p5")}</p>
+        <div className="mt-12 lg:grid lg:grid-cols-12 lg:items-center lg:gap-10 xl:gap-14">
+          <div
+            className={`space-y-6 text-left text-lg leading-relaxed text-flow-text sm:space-y-7 sm:text-xl lg:col-span-7 ${copyMeasure}`}
+          >
+            <p>{t("p1")}</p>
+            <p>{t("p2")}</p>
+            <p>{t("p3")}</p>
+            <p>{t("p4")}</p>
+          </div>
+          <aside className="mt-8 lg:col-span-5 lg:mt-0">
+            <p
+              className={`rounded-2xl border border-flow-border border-l-4 border-l-flow-yellow bg-gradient-to-br from-flow-purple/[0.07] via-white to-flow-bg/60 p-6 text-balance text-3xl font-bold leading-snug tracking-tight text-flow-purple shadow-[0_12px_40px_-16px_rgba(92,84,160,0.25)] sm:p-8 sm:text-[1.875rem] sm:leading-snug lg:text-4xl lg:leading-tight ${copyMeasure}`}
+            >
+              {t("p5")}
+            </p>
+          </aside>
         </div>
       </div>
     </section>
@@ -102,24 +114,32 @@ export async function BodySection() {
         <Eyebrow>{t("eyebrow")}</Eyebrow>
         <h2
           id="body-heading"
-          className="mt-4 text-3xl font-bold leading-tight tracking-tight text-flow-text sm:text-4xl"
+          className={`mt-4 text-4xl font-bold leading-tight tracking-tight text-flow-text sm:text-5xl ${copyMeasure}`}
         >
           {t("title")}
         </h2>
-        <div className="mt-10 max-w-none space-y-5 text-base leading-relaxed text-flow-text sm:text-lg">
+        <div
+          className={`mt-10 space-y-5 text-lg leading-relaxed text-flow-text sm:text-xl ${copyMeasure}`}
+        >
           <p>{t("p1")}</p>
           <p>{t("p2")}</p>
           <p>{t("p3")}</p>
           <p className="font-medium">{t("p4")}</p>
         </div>
 
-        <p className="mt-12 max-w-none text-base leading-relaxed text-flow-text sm:text-lg">
+        <p
+          className={`mt-12 text-lg leading-relaxed text-flow-text sm:text-xl ${copyMeasure}`}
+        >
           {t("handover")}
         </p>
-        <p className="mt-6 max-w-none text-base leading-relaxed text-flow-muted sm:text-lg">
+        <p
+          className={`mt-6 text-lg leading-relaxed text-flow-muted sm:text-xl ${copyMeasure}`}
+        >
           {t("crm")}
         </p>
-        <p className="mt-10 max-w-none border-l-4 border-flow-yellow bg-white/60 py-4 pl-5 text-base font-semibold leading-relaxed text-flow-text sm:text-lg">
+        <p
+          className={`mt-10 border-l-4 border-flow-yellow bg-white/60 py-4 pl-5 text-lg font-semibold leading-relaxed text-flow-text sm:text-xl ${copyMeasure}`}
+        >
           {t("result")}
         </p>
       </div>
@@ -137,28 +157,32 @@ export async function ValueStripSection() {
       aria-labelledby="value-strip-heading"
     >
       <div className={contentMax}>
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-flow-yellow">
+        <p className="text-sm font-bold uppercase tracking-[0.25em] text-flow-yellow">
           {t("eyebrow")}
         </p>
         <h2
           id="value-strip-heading"
-          className="mt-4 max-w-none text-3xl font-bold leading-tight tracking-tight sm:text-4xl"
+          className={`mt-4 text-4xl font-bold leading-tight tracking-tight sm:text-5xl ${copyMeasure}`}
         >
           {t("title")}
         </h2>
-        <p className="mt-6 max-w-none text-base leading-relaxed text-white/85 sm:text-lg">
+        <p
+          className={`mt-6 text-lg leading-relaxed text-white/85 sm:text-xl ${copyMeasure}`}
+        >
           {t("subtitle")}
         </p>
         <ul className="mt-12 grid gap-6 sm:grid-cols-2">
           {items.map((key) => (
-            <li key={key} className="flex gap-4 text-base leading-relaxed">
+            <li key={key} className="flex gap-4 text-lg leading-relaxed">
               <span
-                className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-flow-yellow text-sm font-bold text-flow-text"
+                className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-flow-yellow text-base font-bold text-flow-text"
                 aria-hidden
               >
                 ✓
               </span>
-              <span className="text-white/95">{t(key)}</span>
+              <span className={`min-w-0 text-white/95 ${copyMeasure}`}>
+                {t(key)}
+              </span>
             </li>
           ))}
         </ul>
@@ -187,7 +211,7 @@ export async function HowItWorksSection() {
         <Eyebrow>{t("eyebrow")}</Eyebrow>
         <h2
           id="how-heading"
-          className="mt-4 text-3xl font-bold leading-tight tracking-tight text-flow-text sm:text-4xl"
+          className={`mt-4 text-4xl font-bold leading-tight tracking-tight text-flow-text sm:text-5xl ${copyMeasure}`}
         >
           {t("title")}
         </h2>
@@ -196,15 +220,19 @@ export async function HowItWorksSection() {
             <li key={step.n}>
               <article className="h-full rounded-2xl border border-flow-border bg-flow-bg/40 p-8 shadow-sm transition-shadow hover:shadow-md">
                 <span
-                  className="inline-flex min-w-[3rem] items-center justify-center rounded-lg bg-flow-purple px-3 py-1.5 font-mono text-lg font-bold tabular-nums text-white"
+                  className="inline-flex min-w-[3rem] items-center justify-center rounded-lg bg-flow-purple px-3 py-1.5 font-mono text-xl font-bold tabular-nums text-white"
                   aria-hidden
                 >
                   {step.n}
                 </span>
-                <h3 className="mt-6 text-xl font-bold text-flow-text">
+                <h3
+                  className={`mt-6 text-2xl font-bold text-flow-text ${copyMeasure}`}
+                >
                   {t(step.title)}
                 </h3>
-                <p className="mt-3 text-base leading-relaxed text-flow-muted">
+                <p
+                  className={`mt-3 text-lg leading-relaxed text-flow-muted ${copyMeasure}`}
+                >
                   {t(step.body)}
                 </p>
               </article>
@@ -216,12 +244,14 @@ export async function HowItWorksSection() {
           className="mt-14 border-t border-flow-border pt-12 sm:mt-16 sm:pt-16"
           aria-labelledby="capabilities-heading"
         >
-          <p className="max-w-none text-base font-medium leading-relaxed text-flow-text sm:text-lg">
+          <p
+            className={`text-lg font-medium leading-relaxed text-flow-text sm:text-xl ${copyMeasure}`}
+          >
             {tBody("introBullets")}
           </p>
           <h3
             id="capabilities-heading"
-            className="mt-8 text-xl font-bold text-flow-text sm:mt-10 sm:text-2xl"
+            className={`mt-8 text-2xl font-bold text-flow-text sm:mt-10 sm:text-3xl ${copyMeasure}`}
           >
             {tBody("capabilitiesTitle")}
           </h3>
@@ -231,10 +261,12 @@ export async function HowItWorksSection() {
                 key={key}
                 className="rounded-2xl border border-flow-border bg-flow-bg/50 p-6 shadow-sm transition-shadow hover:shadow-md"
               >
-                <p className="font-mono text-2xl font-bold tabular-nums text-flow-purple/90">
+                <p className="font-mono text-3xl font-bold tabular-nums text-flow-purple/90">
                   {capabilityNums[i]}
                 </p>
-                <p className="mt-3 text-base font-semibold leading-snug text-flow-text">
+                <p
+                  className={`mt-3 text-lg font-semibold leading-snug text-flow-text ${copyMeasure}`}
+                >
                   {tBody(key)}
                 </p>
               </article>
@@ -253,69 +285,105 @@ export async function ClosingDiagnosticSection() {
   return (
     <section
       id="diagnostico"
-      className={`${sectionMuted} scroll-mt-28 border-t-2 border-flow-yellow/90`}
+      className="scroll-mt-28 border-t-2 border-t-flow-yellow/95 bg-gradient-to-b from-white via-flow-bg to-[#eceaf5] py-16 sm:py-20 lg:py-24"
       aria-labelledby="closing-heading"
     >
       <div className={contentMax}>
-        <Eyebrow className="text-flow-muted">Flow Productions</Eyebrow>
-        <h2
-          id="closing-heading"
-          className="mt-4 text-3xl font-bold leading-tight tracking-tight text-flow-text sm:text-4xl"
-        >
-          {t("title")}
-        </h2>
-        <p className="mt-6 max-w-none text-base leading-relaxed text-flow-text sm:text-lg">
-          {t("line1")}
-        </p>
-        <p className="mt-3 max-w-none text-base leading-relaxed text-flow-muted sm:text-lg">
-          {t("line2")}
-        </p>
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-start lg:gap-14 xl:gap-16">
+          <div className="lg:col-span-5 lg:pt-1">
+            <Eyebrow>Flow Productions</Eyebrow>
+            <h2
+              id="closing-heading"
+              className={`mt-4 text-4xl font-bold leading-[1.12] tracking-tight text-flow-text sm:text-5xl lg:text-[2.75rem] ${copyMeasure}`}
+            >
+              {t("title")}
+            </h2>
+            <p
+              className={`mt-6 text-lg leading-relaxed text-flow-text sm:text-xl ${copyMeasure}`}
+            >
+              {t("line1")}
+            </p>
+            <p
+              className={`mt-4 text-lg leading-relaxed text-flow-muted sm:text-xl ${copyMeasure}`}
+            >
+              {t("line2")}
+            </p>
+          </div>
 
-        <div className="mt-12 overflow-hidden rounded-2xl border border-flow-border bg-white shadow-lg ring-1 ring-black/[0.04]">
-          <div className="h-1.5 bg-flow-yellow" aria-hidden />
-          <div className="px-6 py-10 sm:px-12 sm:py-12">
-            <div className="grid grid-cols-2 gap-10 sm:gap-16">
-              <div>
-                <p className="text-4xl font-bold tabular-nums text-flow-purple sm:text-5xl">
-                  {t("statTimeValue")}
-                </p>
-                <p className="mt-1 text-sm font-medium text-flow-muted">
-                  {t("statTimeLabel")}
-                </p>
+          <div className="lg:col-span-7">
+            <div className="relative overflow-hidden rounded-3xl border border-flow-border/90 bg-white shadow-[0_24px_60px_-12px_rgba(92,84,160,0.2)]">
+              <div
+                className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-flow-purple/[0.09] blur-3xl"
+                aria-hidden
+              />
+              <div
+                className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-flow-yellow/30 blur-3xl"
+                aria-hidden
+              />
+              <div className="relative">
+                <div
+                  className="h-1 bg-gradient-to-r from-flow-yellow via-amber-300 to-flow-yellow"
+                  aria-hidden
+                />
+                <div className="flex flex-col items-center p-6 text-center sm:p-8 lg:p-10">
+                  <div className="grid w-full max-w-md gap-4 sm:max-w-none sm:grid-cols-2 sm:gap-5">
+                    <div className="rounded-2xl border border-flow-border/80 bg-gradient-to-br from-white to-flow-bg/90 p-6 sm:p-7">
+                      <p className="text-sm font-bold uppercase tracking-[0.18em] text-flow-muted">
+                        {t("statTimeLabel")}
+                      </p>
+                      <p className="mt-3 text-5xl font-bold tabular-nums text-flow-purple sm:text-6xl">
+                        {t("statTimeValue")}
+                      </p>
+                    </div>
+                    <div className="rounded-2xl border border-flow-border/80 bg-gradient-to-br from-white to-flow-bg/90 p-6 sm:p-7">
+                      <p className="text-sm font-bold uppercase tracking-[0.18em] text-flow-muted">
+                        {t("statQuestionsLabel")}
+                      </p>
+                      <p className="mt-3 text-5xl font-bold tabular-nums text-flow-purple sm:text-6xl">
+                        {t("statQuestionsValue")}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-8 flex w-full max-w-md flex-col items-center gap-3 sm:mt-10 sm:max-w-lg">
+                    <DiagnosticStartLink
+                      href={url}
+                      className="w-full min-h-[3.25rem] justify-center rounded-xl text-lg shadow-md shadow-flow-purple/25 sm:w-auto"
+                    >
+                      {t("button")}
+                    </DiagnosticStartLink>
+                    <p
+                      className={`text-base font-medium leading-snug text-flow-muted ${copyMeasure}`}
+                    >
+                      {t("cardNote")}
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p className="text-4xl font-bold tabular-nums text-flow-purple sm:text-5xl">
-                  {t("statQuestionsValue")}
-                </p>
-                <p className="mt-1 text-sm font-medium text-flow-muted">
-                  {t("statQuestionsLabel")}
-                </p>
-              </div>
-            </div>
-            <div className="mt-12 flex flex-col items-start gap-4">
-              <DiagnosticStartLink href={url}>{t("button")}</DiagnosticStartLink>
-              <p className="text-sm font-medium text-flow-muted">
-                {t("cardNote")}
-              </p>
             </div>
           </div>
         </div>
 
-        <p className="mt-12 text-base leading-relaxed text-flow-text sm:text-lg">
-          {t("websiteLead")}{" "}
-          <a
-            href={FLOW_WEBSITE}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold text-flow-purple underline decoration-flow-yellow decoration-2 underline-offset-2 hover:text-flow-purple-hover"
+        <div className="mt-12 text-center lg:mt-16">
+          <p
+            className={`mx-auto text-lg leading-relaxed text-flow-text sm:text-xl ${copyMeasure}`}
           >
-            {t("websiteLinkLabel")}
-          </a>
-          .
-        </p>
-        <p className="mt-6 max-w-none text-xs leading-relaxed text-flow-muted">
-          {t("flowReference")}
-        </p>
+            {t("websiteLead")}{" "}
+            <a
+              href={FLOW_WEBSITE}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-flow-purple underline decoration-flow-yellow decoration-2 underline-offset-2 hover:text-flow-purple-hover"
+            >
+              {t("websiteLinkLabel")}
+            </a>
+            .
+          </p>
+          <p
+            className={`mx-auto mt-5 text-sm leading-relaxed text-flow-muted ${copyMeasure}`}
+          >
+            {t("flowReference")}
+          </p>
+        </div>
       </div>
     </section>
   );

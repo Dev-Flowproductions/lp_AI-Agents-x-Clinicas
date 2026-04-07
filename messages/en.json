@@ -74,7 +74,8 @@
     "flowReference": "The diagnostic opens on the Flow Productions site (new tab), in the same spirit as the experience we use on flowproductions.pt."
   },
   "Footer": {
-    "rights": "Flow Productions. All rights reserved."
+    "builtBy": "Built by Flow Productions",
+    "rights": "© 2026 Flow Productions. All rights reserved."
   },
   "Languages": {
     "pt": "Português",
