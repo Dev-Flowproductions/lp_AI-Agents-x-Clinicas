@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { Link } from "@/i18n/navigation";
 import { diagnosticCtaPrimaryMotion } from "@/lib/diagnostic-cta-classes";
-import { contentMax } from "@/lib/layout-classes";
+import { contentMax, typeCta } from "@/lib/layout-classes";
 
 export async function SiteHeader() {
   const t = await getTranslations("Nav");
@@ -37,7 +37,7 @@ export async function SiteHeader() {
           <LanguageSwitcher />
           <a
             href="#diagnostico"
-            className={`inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-lg border-2 border-flow-purple bg-flow-purple px-3 py-2 text-center text-sm font-semibold text-white hover:bg-flow-purple-hover sm:px-5 sm:text-base ${diagnosticCtaPrimaryMotion}`}
+            className={`inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-lg border-2 border-flow-purple bg-flow-purple px-3 py-2 text-center text-white hover:bg-flow-purple-hover sm:px-5 ${typeCta} ${diagnosticCtaPrimaryMotion}`}
           >
             {t("ctaDiagnostic")}
           </a>

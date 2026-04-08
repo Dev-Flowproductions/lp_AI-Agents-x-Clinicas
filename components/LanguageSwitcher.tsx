@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { typeNavLink } from "@/lib/layout-classes";
 
 const locales = routing.locales;
 
@@ -12,8 +13,7 @@ const LOCALE_SHORT: Record<(typeof locales)[number], string> = {
   fr: "FR",
 };
 
-const linkBase =
-  "text-sm text-flow-text underline decoration-flow-purple/40 underline-offset-4 transition-colors hover:text-flow-purple hover:decoration-flow-purple sm:text-base";
+const linkBase = `${typeNavLink} text-flow-text underline decoration-flow-purple/40 underline-offset-4 transition-colors hover:text-flow-purple hover:decoration-flow-purple`;
 
 export function LanguageSwitcher() {
   const t = useTranslations("Languages");
@@ -30,7 +30,7 @@ export function LanguageSwitcher() {
           <li key={locale} className="shrink-0">
             {locale === current ? (
               <span
-                className="text-sm font-semibold text-flow-purple sm:text-base"
+                className={`font-semibold text-flow-purple ${typeNavLink}`}
                 aria-current="true"
               >
                 <span className="sm:hidden">
