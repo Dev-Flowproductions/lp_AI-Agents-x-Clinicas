@@ -18,7 +18,7 @@ export function LanguageSwitcher() {
           <li key={locale}>
             {locale === current ? (
               <span
-                className="text-sm font-semibold text-flow-purple"
+                className="text-base font-semibold text-flow-purple"
                 aria-current="true"
               >
                 {t(locale)}
@@ -27,7 +27,7 @@ export function LanguageSwitcher() {
               <Link
                 href="/"
                 locale={locale}
-                className="text-sm text-flow-text underline decoration-flow-purple/40 underline-offset-4 transition-colors hover:text-flow-purple hover:decoration-flow-purple"
+                className="text-base text-flow-text underline decoration-flow-purple/40 underline-offset-4 transition-colors hover:text-flow-purple hover:decoration-flow-purple"
               >
                 {t(locale)}
               </Link>
