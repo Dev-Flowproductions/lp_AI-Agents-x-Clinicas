@@ -72,13 +72,13 @@
     "statTimeLabel": "segundos",
     "statQuestionsValue": "6",
     "statQuestionsLabel": "perguntas",
-    "cardNote": "Grátis · Sem cadastro",
+    "cardNote": "Grátis · Sem registo",
     "flowReference": "Recebe uma sugestão de IA nesta página. Depois pode falar com o Flowi, o nosso agente em flowproductions.pt, num novo separador."
   },
   "DiagnosticWizard": {
     "startIntro": "Responda a seis perguntas rápidas. O nosso assistente sugere o perfil de AI agent mais adequado à sua clínica.",
     "startCta": "Iniciar questionário",
-    "cardNote": "Grátis · Sem cadastro",
+    "cardNote": "Grátis · Sem registo",
     "progress": "Pergunta {current} de {total}",
     "back": "Anterior",
     "next": "Seguinte",
