@@ -3,7 +3,6 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { ClinicDiagnosticWizard } from "@/components/diagnostic/ClinicDiagnosticWizard";
 import { DiagnosticStartLink } from "@/components/DiagnosticStartLink";
-import { getDiagnosticUrl } from "@/lib/diagnostic-url";
 import { getFlowAgentUrl } from "@/lib/flow-agent-url";
 import { contentMax, copyMeasure } from "@/lib/layout-classes";
 
@@ -35,7 +34,6 @@ function Eyebrow({
 
 export async function HeroSection() {
   const t = await getTranslations("Hero");
-  const diagnosticUrl = getDiagnosticUrl();
 
   return (
     <section
@@ -76,7 +74,7 @@ export async function HeroSection() {
         </p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-          <DiagnosticStartLink href={diagnosticUrl}>
+          <DiagnosticStartLink href="#diagnostico">
             {t("ctaPrimary")}
           </DiagnosticStartLink>
           <a
