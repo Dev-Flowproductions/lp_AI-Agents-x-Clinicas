@@ -299,11 +299,13 @@ export async function HowItWorksSection() {
               </article>
             ))}
             <figure className="flex justify-center py-2 sm:col-span-2 lg:col-span-1 lg:row-span-2 lg:col-start-2 lg:row-start-1 lg:items-center lg:justify-center lg:py-0">
+              {/* Unoptimized: avoid WebP/AVIF + default q=75 on line art / flat illustration. */}
               <Image
                 src="/ai.png"
                 alt={tBody("capabilitiesImageAlt")}
                 width={480}
                 height={640}
+                unoptimized
                 className="h-auto w-full max-w-[200px] object-contain sm:max-w-[240px] lg:max-w-[min(100%,280px)]"
                 sizes="(max-width: 640px) 200px, (max-width: 1024px) 240px, 280px"
               />
