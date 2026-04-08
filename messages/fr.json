@@ -24,6 +24,7 @@
     "p5": "L'IA gère la répétition. Votre équipe se concentre sur l'essentiel."
   },
   "Body": {
+    "bodyImageAlt": "Illustration d'un diagnostic assisté par IA sur tablette — concept Clinix AI, fond violet avec visualisation de données médicales",
     "eyebrow": "Le quotidien à l'accueil",
     "capabilitiesTitle": "Ce que ces agents IA font concrètement",
     "title": "Agents IA pour cliniques : quand l'accueil cesse d'être un goulot d'étranglement",
@@ -31,11 +32,12 @@
     "p2": "Un email arrive pour demander des informations, mais la réponse reste en attente.",
     "p3": "Un message WhatsApp arrive, mais le manque de temps retarde la réponse.",
     "p4": "Ce cycle se répète toute la journée : il fragmente l'attention de l'équipe et crée des failles dans l'accueil. C'est là que l'on perd des patients.",
-    "introBullets": "Chez Flow Productions, nous développons et déployons des agents IA entraînés sur le contexte de votre clinique, capables de :",
+    "introBullets": "Chez Flow Productions, nous développons et déployons des agents IA entraînés sur le contexte de votre clinique.",
     "bullet1": "Répondre aux appels et répondre automatiquement",
     "bullet2": "Répondre aux questions fréquentes avec le bon contexte",
     "bullet3": "Qualifier les demandes selon vos critères",
     "bullet4": "Transmettre les contacts à votre équipe avec une information structurée",
+    "capabilitiesImageAlt": "Illustration d'assistant clinique IA — figure en tenue médicale avec badge M.D.I., style autocollant",
     "handover": "Dès que nécessaire, la conversation passe à un humain avec tout l'historique, le contexte utile, et sans friction.",
     "crm": "Le cas échéant, l'agent peut s'intégrer au CRM de la clinique pour la mise à jour des données et l'aide à la gestion des rendez-vous, sous réserve d'analyse de l'API et des contraintes techniques du système existant.",
     "result": "Le résultat n'est pas seulement le temps gagné : c'est aussi la capacité de votre clinique à répondre à tout le monde, avec qualité, chaque jour."

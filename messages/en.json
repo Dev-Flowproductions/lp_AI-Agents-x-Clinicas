@@ -24,6 +24,7 @@
     "p5": "AI handles the repetition. Your team focuses on what really matters."
   },
   "Body": {
+    "bodyImageAlt": "Illustration of AI-assisted diagnostics on a tablet — Clinix AI concept, deep purple background with medical data visualisation",
     "eyebrow": "The day-to-day challenge",
     "capabilitiesTitle": "What these AI agents do in practice",
     "title": "AI agents for clinics: when front-desk work stops being the bottleneck",
@@ -31,11 +32,12 @@
     "p2": "An email arrives asking for information, but the reply stays pending.",
     "p3": "A WhatsApp message comes in, but lack of time means a delayed response.",
     "p4": "This cycle repeats all day: it fragments your team's attention and creates gaps in service. That's where patients are lost.",
-    "introBullets": "At Flow Productions, we develop and deploy AI agents trained on your clinic's context, able to:",
+    "introBullets": "At Flow Productions, we develop and deploy AI agents trained on your clinic's context.",
     "bullet1": "Answer calls and respond automatically",
     "bullet2": "Answer FAQs with the right context",
     "bullet3": "Qualify requests against your criteria",
     "bullet4": "Route contacts to your team with structured information",
+    "capabilitiesImageAlt": "AI clinical assistant illustration — professional figure in medical scrubs with M.D.I. unit badge, sticker-style cutout",
     "handover": "Whenever needed, the conversation moves to a human with full history, the right context, and no friction.",
     "crm": "Where applicable, the agent can integrate with your clinic CRM for data updates and appointment workflows, subject to API review and the technical constraints of your existing system.",
     "result": "The outcome isn't just time saved — it's your clinic's ability to respond to everyone, with quality, every single day."

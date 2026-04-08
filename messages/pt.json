@@ -24,6 +24,7 @@
     "p5": "A IA trata da repetição. A sua equipa foca-se no que realmente importa."
   },
   "Body": {
+    "bodyImageAlt": "Ilustração de diagnóstico assistido por IA num tablet — conceito Clinix AI, fundo roxo com visualização de dados médicos",
     "eyebrow": "O desafio do dia a dia",
     "capabilitiesTitle": "O que estes AI agents fazem na prática",
     "title": "AI Agents para Clínicas: quando o atendimento deixa de ser um bloqueio",
@@ -31,11 +32,12 @@
     "p2": "Entra um email a pedir informações, mas a resposta fica pendente.",
     "p3": "Chega uma mensagem no WhatsApp, mas a falta de tempo leva a uma resposta adiada.",
     "p4": "Este ciclo repete-se ao longo do dia e fragmenta a atenção da equipa e cria falhas no atendimento. E é aí que se perdem pacientes.",
-    "introBullets": "Na Flow Productions, desenvolvemos e implementamos AI agents treinados com o contexto da sua clínica, capazes de:",
+    "introBullets": "Na Flow Productions, desenvolvemos e implementamos AI agents treinados com o contexto da sua clínica.",
     "bullet1": "Atender chamadas e responder automaticamente",
     "bullet2": "Responder a perguntas frequentes com contexto",
     "bullet3": "Qualificar pedidos com base nos seus critérios",
     "bullet4": "Encaminhar contactos para a sua equipa com toda a informação estruturada",
+    "capabilitiesImageAlt": "Ilustração de assistente clínico de IA — figura profissional com bata e identificação M.D.I., estilo autocolante",
     "handover": "Sempre que necessário, o contacto passa para o humano com todo o histórico, contexto necessários e sem fricção.",
     "crm": "Quando aplicável, o agente pode ser integrado com o CRM da clínica para atualização de dados e apoio à gestão de marcações, sujeito à análise da API e das condições técnicas do sistema existente.",
     "result": "O resultado não está apenas no tempo poupado, mas também na capacidade da sua clínica responder a todos, com qualidade, todos os dias."

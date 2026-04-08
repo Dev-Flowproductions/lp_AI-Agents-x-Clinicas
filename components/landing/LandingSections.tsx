@@ -115,37 +115,54 @@ export async function BodySection() {
   return (
     <section className={sectionMuted} aria-labelledby="body-heading">
       <div className={contentMax}>
-        <Eyebrow>{t("eyebrow")}</Eyebrow>
-        <h2
-          id="body-heading"
-          className={`mt-4 text-4xl font-bold leading-tight tracking-tight text-flow-text sm:text-5xl ${copyMeasure}`}
-        >
-          {t("title")}
-        </h2>
-        <div
-          className={`mt-10 space-y-5 text-lg leading-relaxed text-flow-text sm:text-xl ${copyMeasure}`}
-        >
-          <p>{t("p1")}</p>
-          <p>{t("p2")}</p>
-          <p>{t("p3")}</p>
-          <p className="font-medium">{t("p4")}</p>
-        </div>
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-12 xl:gap-16">
+          <div className="lg:col-span-7">
+            <Eyebrow>{t("eyebrow")}</Eyebrow>
+            <h2
+              id="body-heading"
+              className={`mt-4 text-4xl font-bold leading-tight tracking-tight text-flow-text sm:text-5xl ${copyMeasure}`}
+            >
+              {t("title")}
+            </h2>
+            <div
+              className={`mt-10 space-y-5 text-lg leading-relaxed text-flow-text sm:text-xl ${copyMeasure}`}
+            >
+              <p>{t("p1")}</p>
+              <p>{t("p2")}</p>
+              <p>{t("p3")}</p>
+              <p className="font-medium">{t("p4")}</p>
+            </div>
 
-        <p
-          className={`mt-12 text-lg leading-relaxed text-flow-text sm:text-xl ${copyMeasure}`}
-        >
-          {t("handover")}
-        </p>
-        <p
-          className={`mt-6 text-lg leading-relaxed text-flow-muted sm:text-xl ${copyMeasure}`}
-        >
-          {t("crm")}
-        </p>
-        <p
-          className={`mt-10 border-l-4 border-flow-yellow bg-white/60 py-4 pl-5 text-lg font-semibold leading-relaxed text-flow-text sm:text-xl ${copyMeasure}`}
-        >
-          {t("result")}
-        </p>
+            <p
+              className={`mt-12 text-lg leading-relaxed text-flow-text sm:text-xl ${copyMeasure}`}
+            >
+              {t("handover")}
+            </p>
+            <p
+              className={`mt-6 text-lg leading-relaxed text-flow-text sm:text-xl ${copyMeasure}`}
+            >
+              {t("crm")}
+            </p>
+            <p
+              className={`mt-10 border-l-4 border-flow-yellow bg-white/60 py-4 pl-5 text-lg font-semibold leading-relaxed text-flow-text sm:text-xl ${copyMeasure}`}
+            >
+              {t("result")}
+            </p>
+          </div>
+
+          <div className="lg:col-span-5">
+            <figure className="mx-auto max-w-sm sm:max-w-md lg:mx-0 lg:max-w-none">
+              <Image
+                src="/clinica.png"
+                alt={t("bodyImageAlt")}
+                width={720}
+                height={1080}
+                className="h-auto w-full rounded-2xl border border-flow-border shadow-[0_20px_50px_-12px_rgba(92,84,160,0.22)]"
+                sizes="(max-width: 1024px) 100vw, 42vw"
+              />
+            </figure>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -261,11 +278,15 @@ export async function HowItWorksSection() {
           >
             {tBody("capabilitiesTitle")}
           </h3>
-          <div className="mt-6 grid gap-5 sm:mt-8 sm:grid-cols-2">
-            {capabilityKeys.map((key, i) => (
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:mt-8 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 lg:gap-6">
+            {[0, 1].map((i) => (
               <article
-                key={key}
-                className="rounded-2xl border border-flow-border bg-flow-bg/50 p-6 shadow-sm transition-shadow hover:shadow-md"
+                key={capabilityKeys[i]}
+                className={`min-w-0 ${
+                  i === 0
+                    ? "lg:col-start-1 lg:row-start-1"
+                    : "lg:col-start-3 lg:row-start-1"
+                }`}
               >
                 <p className="font-mono text-3xl font-bold tabular-nums text-flow-purple/90">
                   {capabilityNums[i]}
@@ -273,7 +294,36 @@ export async function HowItWorksSection() {
                 <p
                   className={`mt-3 text-lg font-semibold leading-snug text-flow-text ${copyMeasure}`}
                 >
-                  {tBody(key)}
+                  {tBody(capabilityKeys[i])}
+                </p>
+              </article>
+            ))}
+            <figure className="flex justify-center py-2 sm:col-span-2 lg:col-span-1 lg:row-span-2 lg:col-start-2 lg:row-start-1 lg:items-center lg:justify-center lg:py-0">
+              <Image
+                src="/ai.png"
+                alt={tBody("capabilitiesImageAlt")}
+                width={480}
+                height={640}
+                className="h-auto w-full max-w-[200px] object-contain sm:max-w-[240px] lg:max-w-[min(100%,280px)]"
+                sizes="(max-width: 640px) 200px, (max-width: 1024px) 240px, 280px"
+              />
+            </figure>
+            {[2, 3].map((i) => (
+              <article
+                key={capabilityKeys[i]}
+                className={`min-w-0 ${
+                  i === 2
+                    ? "lg:col-start-1 lg:row-start-2"
+                    : "lg:col-start-3 lg:row-start-2"
+                }`}
+              >
+                <p className="font-mono text-3xl font-bold tabular-nums text-flow-purple/90">
+                  {capabilityNums[i]}
+                </p>
+                <p
+                  className={`mt-3 text-lg font-semibold leading-snug text-flow-text ${copyMeasure}`}
+                >
+                  {tBody(capabilityKeys[i])}
                 </p>
               </article>
             ))}
@@ -310,7 +360,7 @@ export async function ClosingDiagnosticSection() {
               {t("line1")}
             </p>
             <p
-              className={`mt-4 text-lg leading-relaxed text-flow-muted sm:text-xl ${copyMeasure}`}
+              className={`mt-4 text-lg leading-relaxed text-flow-text sm:text-xl ${copyMeasure}`}
             >
               {t("line2")}
             </p>
