@@ -33,11 +33,11 @@ export async function SiteHeader() {
             sizes="(max-width: 640px) 160px, 200px"
           />
         </Link>
-        <div className="flex flex-wrap items-center justify-end gap-x-4 gap-y-2 sm:gap-x-6">
+        <div className="flex min-w-0 flex-nowrap items-center justify-end gap-2 sm:gap-x-6">
           <LanguageSwitcher />
           <a
             href="#diagnostico"
-            className={`inline-flex shrink-0 items-center justify-center rounded-lg border-2 border-flow-purple bg-flow-purple px-3 py-2 text-center text-sm font-semibold text-white hover:bg-flow-purple-hover sm:px-5 sm:text-base ${diagnosticCtaPrimaryMotion}`}
+            className={`inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-lg border-2 border-flow-purple bg-flow-purple px-3 py-2 text-center text-sm font-semibold text-white hover:bg-flow-purple-hover sm:px-5 sm:text-base ${diagnosticCtaPrimaryMotion}`}
           >
             {t("ctaDiagnostic")}
           </a>
