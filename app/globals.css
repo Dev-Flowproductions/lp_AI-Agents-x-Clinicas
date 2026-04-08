@@ -27,6 +27,12 @@
     sans-serif;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   background: var(--flow-bg);
   color: var(--flow-text);
