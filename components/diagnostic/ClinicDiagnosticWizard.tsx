@@ -4,7 +4,14 @@ import { useLocale, useTranslations } from "next-intl";
 import { useCallback, useMemo, useState } from "react";
 import type { DiagnosticRecommendResponse } from "@/lib/diagnostic-recommend-schema";
 import { trackLandingEvent } from "@/lib/analytics-client";
-import { copyMeasure } from "@/lib/layout-classes";
+import {
+  copyMeasure,
+  typeFinePrint,
+  typeLabelCaps,
+  typeQuizLegend,
+  typeWizardBody,
+  typeWizardMuted,
+} from "@/lib/layout-classes";
 
 const QUESTION_COUNT = 6;
 const OPTION_KEYS = ["a", "b", "c", "d"] as const;
@@ -119,19 +126,19 @@ export function ClinicDiagnosticWizard({ flowAgentUrl }: Props) {
     return (
       <div className="mt-8 flex w-full max-w-md flex-col items-center gap-4 sm:mt-10 sm:max-w-lg">
         <p
-          className={`text-center text-base leading-relaxed text-flow-text ${copyMeasure}`}
+          className={`text-center text-flow-text ${typeWizardBody} ${copyMeasure}`}
         >
           {t("startIntro")}
         </p>
         <button
           type="button"
           onClick={startQuiz}
-          className="inline-flex min-h-[3.25rem] w-full items-center justify-center rounded-xl bg-flow-purple px-8 py-3 text-center text-lg font-semibold text-white shadow-md shadow-flow-purple/25 transition-colors hover:bg-flow-purple-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-flow-purple sm:w-auto"
+          className="inline-flex min-h-[3.25rem] w-full items-center justify-center rounded-xl bg-flow-purple px-8 py-3 text-center text-base font-semibold text-white shadow-md shadow-flow-purple/25 transition-colors hover:bg-flow-purple-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-flow-purple min-[420px]:text-lg sm:w-auto"
         >
           {t("startCta")}
         </button>
         <p
-          className={`text-center text-base font-medium leading-snug text-flow-muted ${copyMeasure}`}
+          className={`text-center text-flow-muted ${typeWizardMuted} leading-snug ${copyMeasure}`}
         >
           {t("cardNote")}
         </p>
@@ -143,7 +150,7 @@ export function ClinicDiagnosticWizard({ flowAgentUrl }: Props) {
     return (
       <div className="mt-8 flex w-full flex-col items-center gap-4 sm:mt-10">
         <p
-          className="text-flow-purple"
+          className="text-sm text-flow-purple min-[420px]:text-base"
           role="status"
           aria-live="polite"
         >
@@ -157,30 +164,32 @@ export function ClinicDiagnosticWizard({ flowAgentUrl }: Props) {
   if (view === "done" && result) {
     return (
       <div className="mt-8 w-full max-w-xl text-left sm:mt-10">
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-flow-muted">
+        <p className={`${typeLabelCaps} text-flow-muted`}>
           {t("resultKicker")}
         </p>
-        <h3 className="mt-2 text-2xl font-bold leading-tight text-flow-purple sm:text-3xl">
+        <h3 className="mt-2 text-xl font-bold leading-tight text-flow-purple min-[420px]:text-2xl sm:text-3xl">
           {result.agentProfileTitle}
         </h3>
-        <p className="mt-2 text-lg font-medium text-flow-text">
+        <p className="mt-2 text-base font-medium text-flow-text min-[420px]:text-lg">
           {result.agentProfileSubtitle}
         </p>
-        <p className="mt-4 text-base leading-relaxed text-flow-text">
+        <p className={`mt-4 text-flow-text ${typeWizardBody}`}>
           {result.rationale}
         </p>
-        <p className="mt-6 text-sm font-bold uppercase tracking-wider text-flow-muted">
+        <p className="mt-6 text-xs font-bold uppercase tracking-wider text-flow-muted min-[420px]:text-sm">
           {t("focusLabel")}
         </p>
-        <ul className="mt-2 list-inside list-disc space-y-1 text-base text-flow-text">
+        <ul className={`mt-2 list-inside list-disc space-y-1 text-flow-text ${typeWizardBody}`}>
           {result.priorityCapabilities.map((cap) => (
             <li key={cap}>{cap}</li>
           ))}
         </ul>
-        <p className="mt-6 rounded-xl border border-flow-border bg-flow-bg/60 p-4 text-base font-medium text-flow-text">
+        <p
+          className={`mt-6 rounded-xl border border-flow-border bg-flow-bg/60 p-4 font-medium text-flow-text ${typeWizardBody}`}
+        >
           {result.suggestedNextStep}
         </p>
-        <p className="mt-4 text-xs leading-relaxed text-flow-muted">
+        <p className={`mt-4 text-flow-muted ${typeFinePrint}`}>
           {t("resultDisclaimer")}
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -211,11 +220,11 @@ export function ClinicDiagnosticWizard({ flowAgentUrl }: Props) {
 
   return (
     <div className="mt-8 w-full max-w-xl sm:mt-10">
-      <p className="text-center text-sm font-medium text-flow-muted">
+      <p className={`text-center text-flow-muted ${typeWizardMuted}`}>
         {t("progress", { current: step + 1, total: QUESTION_COUNT })}
       </p>
       <fieldset className="mt-6 text-left">
-        <legend className="text-lg font-semibold leading-snug text-flow-text sm:text-xl">
+        <legend className={`text-flow-text ${typeQuizLegend}`}>
           {t(`q${step + 1}_prompt`)}
         </legend>
         <div className="mt-4 flex flex-col gap-3">
@@ -241,7 +250,7 @@ export function ClinicDiagnosticWizard({ flowAgentUrl }: Props) {
                   onChange={() => selectOption(option)}
                   className="mt-1 size-4 shrink-0 accent-flow-purple"
                 />
-                <span className="text-base leading-relaxed text-flow-text">
+                <span className={`text-flow-text ${typeWizardBody}`}>
                   {t(`q${step + 1}_${key}` as Parameters<typeof t>[0])}
                 </span>
               </label>
