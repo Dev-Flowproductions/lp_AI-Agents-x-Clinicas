@@ -1,8 +1,10 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import { ClinicDiagnosticWizard } from "@/components/diagnostic/ClinicDiagnosticWizard";
 import { DiagnosticStartLink } from "@/components/DiagnosticStartLink";
 import { getDiagnosticUrl } from "@/lib/diagnostic-url";
+import { getFlowAgentUrl } from "@/lib/flow-agent-url";
 import { contentMax, copyMeasure } from "@/lib/layout-classes";
 
 const FLOW_WEBSITE = "https://flowproductions.pt";
@@ -336,7 +338,7 @@ export async function HowItWorksSection() {
 
 export async function ClosingDiagnosticSection() {
   const t = await getTranslations("Closing");
-  const url = getDiagnosticUrl();
+  const flowAgentUrl = getFlowAgentUrl();
 
   return (
     <section
@@ -400,19 +402,7 @@ export async function ClosingDiagnosticSection() {
                       </p>
                     </div>
                   </div>
-                  <div className="mt-8 flex w-full max-w-md flex-col items-center gap-3 sm:mt-10 sm:max-w-lg">
-                    <DiagnosticStartLink
-                      href={url}
-                      className="w-full min-h-[3.25rem] justify-center rounded-xl text-lg shadow-md shadow-flow-purple/25 sm:w-auto"
-                    >
-                      {t("button")}
-                    </DiagnosticStartLink>
-                    <p
-                      className={`text-base font-medium leading-snug text-flow-muted ${copyMeasure}`}
-                    >
-                      {t("cardNote")}
-                    </p>
-                  </div>
+                  <ClinicDiagnosticWizard flowAgentUrl={flowAgentUrl} />
                 </div>
               </div>
             </div>
